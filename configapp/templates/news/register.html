@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
+    <title>Register</title>
+  </head>
+
+
+<style>
+h1, p{
+    text-align: center;
+}
+
+
+    .container{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* font family is added */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+}
+
+h1, p {
+  text-align: center;
+}
+
+/* desired spacing for input fields */
+input {
+  margin: 0.25em 0em 1em 0em;
+}
+/* styles for button */
+button {
+  padding: 0.75em;
+  border: none;
+  outline: none;
+  background-color: rgb(68, 18, 232);
+  color: white;
+  border-radius: 0.25em;
+}
+
+/* hover functionality for button */
+button:hover {
+  cursor: pointer;
+  background-color: rgb(41, 4, 164);
+}
+
+
+
+</style>
+
+<body class="bg03">
+
+ <form method="POST" action="">
+     {% csrf_token %}
+      <!-- class named "container" is assigned to div -->
+      <div class="container">
+        <h1>Register</h1>
+        <p>registerdan utish.</p>
+        <label><b>Username</b></label>
+          <span class="input-group-txt"><i class="fas fa-user"></i> </span>
+        {{form.username}}
+
+        <label><b>Email</b></label>
+          <span class="input-group-txt"><i class="fas fa-envelope-square"></i> </span>
+        {{form.email}}
+
+        <label><b>Password</b></label>
+          <span class="input-group-txt"><i class="fas fa-key"></i> </span>
+          {{form.password1}}
+
+        <label><b></b>Password2</b></label>
+          <span class="input-group-txt"><i class="fas fa-key"></i> </span>
+        {{form.password2}}
+
+        <button type="submit">Register</button>
+      </div>
+     {{form.errors}}
+      <div>
+        <p>Already have an account? <a href="{% url 'login' %}">Log in</a>.</p>
+      </div>
+    </form>
+
+<!--    <form class="form" method="POST" action="">-->
+<!--        {% csrf_token %}-->
+<!--        {{ form.username.label}}-->
+<!--        {{form.username}}-->
+<!--        <br>-->
+
+<!--        {{form.email.label}}-->
+<!--        {{form.email}}-->
+<!--        <br>-->
+<!--        {{form.password1.label}}-->
+<!--        {{form.password1}}-->
+<!--        <br>-->
+<!--        {{form.password2.label}}-->
+<!--        {{form.password2}}-->
+
+<!--        <input type="submit" name="Create User">-->
+<!--    </form>-->
+<!--    <form class="d-flex" role="register">-->
+<!--                <button class="btn btn-outline-success" type="home"><a href="{% url 'register' %}"> SAYT </a></button>-->
+<!--    </form>-->
+</body>
+</html>
